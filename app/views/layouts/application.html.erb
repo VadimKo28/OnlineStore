@@ -12,8 +12,10 @@
   <body class="<%= controller.controller_name %> ">
 
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#contact">You cart</a></li>
+      <li><%= link_to 'Home', store_path, style: "color: white"%></li>
+      <% if session[:cart_id] != nil %>
+      <li><%= link_to 'You cart', cart_path(session[:cart_id]), style: "color: white"%></li>
+      <%end%>
 
       <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">Sign-in</a>
