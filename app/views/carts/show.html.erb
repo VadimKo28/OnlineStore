@@ -10,6 +10,8 @@
       <td><%= item.product.title %></td>
       <td>&times;<%= item.quantity%></td>
       <td><%= number_to_currency(item.product.price) %></td>
+      <td><%= button_to "Delete item", line_item_url(item), method: :delete,
+        data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 
