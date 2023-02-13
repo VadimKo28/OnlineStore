@@ -17,6 +17,8 @@
 <%= button_to 'Empty cart', @cart, method: :delete,
   data: { confirm: 'Are you sure?' } %>
 
+<%= button_to "Create order", new_order_path, method: :get, style: "margin-top: 5px"%>
+
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 
 <%= link_to 'Back', carts_path %>
