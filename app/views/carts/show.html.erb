@@ -5,15 +5,8 @@
 <h2>Your Cart</h2>
 
 <table>
-  <% @cart.line_items.each do |item| %>
-    <tr>
-      <td><%= item.product.title %></td>
-      <td>&times;<%= item.quantity%></td>
-      <td><%= number_to_currency(item.product.price) %></td>
-      <td><%= button_to "Delete item", line_item_url(item), method: :delete,
-        data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
+  <%= render @cart.line_items%>
+    
 
   <tr class="total_line">
     <td colspan="2">Total</td>
