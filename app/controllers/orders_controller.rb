@@ -5,7 +5,8 @@ class OrdersController < ApplicationController
 
   # GET /orders or /orders.json
   def index
-    @orders = Order.all
+    orders = Order.all
+    @current_user_orders = current_user.orders
   end
 
   # GET /orders/1 or /orders/1.json
@@ -28,6 +29,7 @@ class OrdersController < ApplicationController
   # POST /orders or /orders.json
   def create
     @order = Order.new(order_params)
+    @order.user_id = current_user.id
     @order.add_line_items_from_cart(@cart)
 
     respond_to do |format|

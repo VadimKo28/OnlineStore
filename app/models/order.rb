@@ -1,4 +1,6 @@
 class Order < ApplicationRecord
+  belongs_to :user
+
   enum pay_type: {
          Check: 0,
          Credit_card: 1,

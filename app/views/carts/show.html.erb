@@ -1,10 +1,11 @@
 <% if notice %>
   <p><%= notice %></p>
 <% end %>
+<div class="margin-cart">
 
 <h2>Your Cart</h2>
 
-<table>
+<table >
   <%= render @cart.line_items%>
     
 
@@ -19,6 +20,9 @@
 
 <%= button_to "Create order", new_order_path, method: :get, style: "margin-top: 5px"%>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%if current_user.status == 1%>
+  <%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%end%>
 
 <%= link_to 'Back', carts_path %>
+</div>
