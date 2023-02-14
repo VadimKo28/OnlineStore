@@ -14,6 +14,7 @@ gem "jbuilder", "~> 2.5"
 gem "bootsnap", ">= 1.1.0", require: false
 gem 'jquery-rails'
 gem "font-awesome-rails"
+gem 'devise'
 
 group :development, :test do
   gem "rspec-rails", "~> 5.0.0"
