@@ -1,1 +1,5 @@
-Online store, with the ability to register a user, display a product catalog, add to cart, place an order
+
+In the project directory, on the command line, type
+
+1) Bundle - installation of gems and application dependencies
+2) rails db:migrate  - create database application
